@@ -9,7 +9,7 @@ pipeline {
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "Mavenjava-env"
     }
-     stages {
+    stages {
         stage('Validate') {
             steps {
                 
@@ -22,7 +22,6 @@ pipeline {
 
          stage('Build') {
             steps {
-                sh "mvn clean package"
                 sh "mvn compile"
 
             }
